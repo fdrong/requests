@@ -11,6 +11,7 @@ Datastructures that power Requests.
 from UserDict import DictMixin
 
 
+# 为什么要封装这样一种数据格式？
 class CaseInsensitiveDict(DictMixin):
     """docstring for CaseInsensitiveDict"""
 
@@ -30,32 +31,24 @@ class CaseInsensitiveDict(DictMixin):
     def _lower_keys(self):
         return map(str.lower, self.data.keys())
 
-
     def __contains__(self, key):
         return key.lower() in self._lower_keys()
 
-
     def __getitem__(self, key):
-
         if key.lower() in self:
             return self.items()[self._lower_keys().index(key.lower())][1]
-
 
     def __setitem__(self, key, value):
         return self.data.__setitem__(key, value)
 
-
     def __delitem__(self, key):
         return self.data.__delitem__(key)
-
 
     def __keys__(self):
         return self.data.__keys__()
 
-
     def __iter__(self):
         return self.data.__iter__()
-
 
     def iteritems(self):
         return self.data.iteritems()

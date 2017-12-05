@@ -3,52 +3,10 @@
 """
 __title__ = ''
 __author__ = 'rongfudi636'
-__mtime__ = '2017/12/4'
+__mtime__ = '2017/12/5'
 """
 
 
-from requests import get
-
-# r = get(url='http://www.baidu.com')
-# print(r.content)
-
-# class Borg(object):
-#     __shared_state = {}
-#
-#     def __init__(self):
-#         self.__dict__ = self.__shared_state
-#         self.state = 'Init'
-#
-#     def __str__(self):
-#         return self.state
-#
-#
-# class YourBorg(Borg):
-#     pass
-#
-#
-# if __name__ == '__main__':
-#     rm1 = Borg()
-#     rm2 = Borg()
-#     rm1.state = 'Idle'
-#     rm2.state = 'Running'
-#     print("rm1: {}".format(rm1))
-#     print("rm2: {}".format(rm2))
-#
-#     print('rm1 id: {0}'.format(id(rm1)))
-#     print('rm2 id: {0}'.format(id(rm2)))
-#
-# from requests.models import AuthManager
-#
-# auth1 = AuthManager()
-# auth1.add_password(realm=None, user='abc', passwd='abc', uri='http://www.baidu.com')
-#
-# auth2 = AuthManager()
-# auth2.add_password(realm=None, user='abc1', passwd='abc1', uri='http://www.baidu.com')
-# print(auth1.passwd)
-# print(auth2.passwd)
-# print(id(auth1))
-# print(id(auth2))
 import six
 import abc
 import random
@@ -153,6 +111,3 @@ if __name__ == '__main__':
     for name in ['kitty', 'duck']:
         pet = Pet.from_name(name)
         print("{} : {}".format(name, pet.speak()))
-
-
-
