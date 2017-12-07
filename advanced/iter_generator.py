@@ -60,3 +60,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    # summary  迭代器是可迭代的实现了 __iter__ 和 __next__方法 python 2是 next()
+    # 生成器表达式和含有yield的函数都是生成器对象 一定是可以迭代的
+    # 生成器和迭代器可以节省内存 应该尽量使用
