@@ -10,7 +10,7 @@ __mtime__ = '2017/12/7'
 # listb 是迭代器
 
 
-from itertools import islice
+# from itertools import islice
 
 
 # 构造一个迭代器 斐波那契数列
@@ -46,6 +46,21 @@ def fib():
         prev, curr = curr, prev + curr
 
 
+class MyIterator(object):
+
+    def __init__(self, step):
+        self.step = step
+
+    def next(self):
+        if self.step == 0:
+            raise StopIteration
+        else:
+            self.step -= 1
+        return self.step
+
+    def __iter__(self):
+        return self
+
 def main():
     lista = [1, 2, 3]
     listb = iter(lista)
@@ -55,8 +70,11 @@ def main():
     print(id(lista))
     print(id(listb))
     # fib = Fib()
-    print(list(islice(fib(), 0, 10)))
+    # print(list(islice(fib(), 0, 10)))
 
+    myiter = MyIterator(5)
+    for item in myiter:
+        print item
 
 if __name__ == '__main__':
     main()
